@@ -75,7 +75,7 @@ const N = 40;
 const elems = [];
 for (let i = 0; i < N; i++) elems[i] = { use: null, x: width / 2, y: 0 };
 const pointer = { x: width / 2, y: height / 2 };
-const radm = Math.min(pointer.x, pointer.y) - 20;
+const radm = (Math.min(pointer.x, pointer.y) - 20) / 2;
 let frm = Math.random();
 let rad = 0;
 
@@ -98,7 +98,7 @@ const run = () => {
     const a = Math.atan2(e.y - ep.y, e.x - ep.x);
     e.x += (ep.x - e.x + (Math.cos(a) * (100 - i)) / 5) / 4;
     e.y += (ep.y - e.y + (Math.sin(a) * (100 - i)) / 5) / 4;
-    const s = (162 + 4 * (1 - i)) / 50;
+    const s = (162 + 4 * (1 - i)) / 100;
     e.use.setAttributeNS(
       null,
       "transform",
