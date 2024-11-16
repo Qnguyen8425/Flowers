@@ -2,6 +2,41 @@ onload = () => {
   document.body.classList.remove("container");
 };
 
+//Thêm Nhạc
+const songs = [
+  "aud/Music chill/BongPhuHoa.mp3",
+  "aud/Music chill/ChuyenHoaCuc.mp3",
+  "aud/Music chill/DongSongPhangLang.mp3",
+  "aud/Music chill/NangThoXuHue.mp3",
+  "aud/Music chill/NeuMotMaiToiBayLenTroi.mp3",
+  "aud/Music chill/NhamMatThayMuaHe.mp3",
+];
+
+let currentSongIndex = 0;
+const audioPlayer = document.getElementById("audioPlayer");
+const nextButton = document.getElementById("nextButton");
+
+// Hàm để chuyển bài hát
+function playSong(index) {
+  audioPlayer.src = songs[index];
+  audioPlayer.play();
+}
+
+// Chuyển bài khi bài hiện tại kết thúc
+audioPlayer.addEventListener("ended", () => {
+  currentSongIndex = (currentSongIndex + 1) % songs.length; // vòng lặp lại từ đầu danh sách
+  playSong(currentSongIndex);
+});
+
+// Hàm để chuyển đến bài hát tiếp theo khi nút bấm được nhấn
+nextButton.addEventListener("click", () => {
+  currentSongIndex = (currentSongIndex + 1) % songs.length; // vòng lặp lại từ đầu danh sách
+  playSong(currentSongIndex);
+});
+
+// Bắt đầu phát bài hát đầu tiên
+playSong(currentSongIndex);
+
 //Tạo Rồng
 ("use strict");
 
@@ -116,38 +151,3 @@ function createElementRandom() {
   }
 }
 createElementRandom();
-
-//Thêm Nhạc
-const songs = [
-  "aud/Music chill/BongPhuHoa.mp3",
-  "aud/Music chill/ChuyenHoaCuc.mp3",
-  "aud/Music chill/DongSongPhangLang.mp3",
-  "aud/Music chill/NangThoXuHue.mp3",
-  "aud/Music chill/NeuMotMaiToiBayLenTroi.mp3",
-  "aud/Music chill/NhamMatThayMuaHe.mp3",
-];
-
-let currentSongIndex = 0;
-const audioPlayer = document.getElementById("audioPlayer");
-const nextButton = document.getElementById("nextButton");
-
-// Hàm để chuyển bài hát
-function playSong(index) {
-  audioPlayer.src = songs[index];
-  audioPlayer.play();
-}
-
-// Chuyển bài khi bài hiện tại kết thúc
-audioPlayer.addEventListener("ended", () => {
-  currentSongIndex = (currentSongIndex + 1) % songs.length; // vòng lặp lại từ đầu danh sách
-  playSong(currentSongIndex);
-});
-
-// Hàm để chuyển đến bài hát tiếp theo khi nút bấm được nhấn
-nextButton.addEventListener("click", () => {
-  currentSongIndex = (currentSongIndex + 1) % songs.length; // vòng lặp lại từ đầu danh sách
-  playSong(currentSongIndex);
-});
-
-// Bắt đầu phát bài hát đầu tiên
-playSong(currentSongIndex);
