@@ -1,16 +1,12 @@
+/* Button Next Song */
 .overlay {
   position: fixed;
   bottom: 50px;
-  width: 100px; /* Chiếm toàn bộ chiều rộng màn hình */
-  height: 40px; /* Chiếm toàn bộ chiều cao màn hình */
+  width: 100px;
+  height: 40px; 
   border-radius: 100px;
-  background-color: rgba(
-    233,
-    232,
-    232,
-    0.5
-  ); /* Nền màu đen với độ trong suốt */
-  z-index: 100; /* Đặt z-index cao để đè lên các thẻ khác */
+  background-color: rgba(119, 112, 112, 0.5); 
+  z-index: 1000; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,17 +14,15 @@
   color:#f8f9fa;
 }
 
-content{
-  overflow: hidden;
-}
-
+/* rain */
 #Contain{
+  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 99;
+  z-index: 10;
 }
 
 @keyframes move{
