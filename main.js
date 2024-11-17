@@ -70,7 +70,7 @@ const prepend = (use, i) => {
   screen.prepend(elem);
 };
 
-const N = 40;
+const N = 30;
 
 const elems = [];
 for (let i = 0; i < N; i++) elems[i] = { use: null, x: width / 2, y: 0 };
@@ -80,9 +80,9 @@ let frm = Math.random();
 let rad = 0;
 
 for (let i = 1; i < N; i++) {
-  if (i === 1) prepend("Cabeza", i);
-  else if (i === 8 || i === 14) prepend("Aletas", i);
-  else prepend("Espina", i);
+  if (i === 1) prepend("Head", i);
+  else if (i === 8 || i === 14) prepend("Wing", i);
+  else prepend("Body", i);
 }
 
 const run = () => {
