@@ -70,7 +70,7 @@ const prepend = (use, i) => {
   screen.prepend(elem);
 };
 
-const N = 30;
+const N = 25;
 
 const elems = [];
 for (let i = 0; i < N; i++) elems[i] = { use: null, x: width / 2, y: 0 };
